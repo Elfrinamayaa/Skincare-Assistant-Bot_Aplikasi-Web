@@ -1,0 +1,40 @@
+pertanyaan,harapan,prediksi,skor,benar
+hai,sapaan,sapaan,1.0,ya
+halo kak,sapaan,sapaan,1.0,ya
+selamat pagi,sapaan,sapaan,1.0,ya
+hello,sapaan,sapaan,1.0,ya
+gimana cara tahu jenis kulitku?,skin_type,skin_type,1.0,ya
+jenis kulit wajah ada apa saja,skin_type,skin_type,0.571,ya
+rekomendasi skincare buat kulit berminyak,oily_skin,oily_skin,0.75,ya
+wajahku berminyak banget,oily_skin,oily_skin,1.0,ya
+cara merawat kulit kering gimana,dry_skin,dry_skin,1.0,ya
+wajah kering dan tertarik,dry_skin,dry_skin,0.8,ya
+cara mengatasi jerawat,acne_skin,acne_skin,1.0,ya
+obat jerawat apa yang bagus,acne_skin,acne_skin,0.8,ya
+jerawatku banyak,acne_skin,acne_skin,0.667,ya
+urutan skincare pagi,skincare_routine,skincare_routine,0.8,ya
+skincare routine pemula,skincare_routine,skincare_routine,0.8,ya
+kenapa sunscreen itu penting,sunscreen,sunscreen,0.667,ya
+pakai sunscreen perlu nggak,sunscreen,sunscreen,1.0,ya
+sunscren,sunscreen,sunscreen,1.0,ya
+fungsi moisturizer itu apa,moisturizer,moisturizer,1.0,ya
+pelembap wajah buat apa,moisturizer,moisturizer,0.8,ya
+serum itu fungsinya apa,serum,serum,1.0,ya
+perlu pakai serum gak,serum,serum,0.667,ya
+cara hilangkan bekas jerawat,acne_scars,acne_scars,0.8,ya
+bekas jerawat susah hilang,acne_scars,acne_scars,0.667,ya
+skin barrier itu apa,skin_barrier,skin_barrier,1.0,ya
+apa itu skin barrier,skin_barrier,skin_barrier,1.0,ya
+kulit sensitif harus gimana,sensitive_skin,sensitive_skin,1.0,ya
+cara merawat kulit sensitif,sensitive_skin,sensitive_skin,1.0,ya
+double cleansing itu apa,double_cleansing,double_cleansing,1.0,ya
+perlu double cleansing nggak,double_cleansing,double_cleansing,1.0,ya
+skincare malam apa saja,skincare_night,skincare_night,1.0,ya
+rutinitas malam hari,skincare_night,skincare_night,0.8,ya
+terima kasih,goodbye,goodbye,1.0,ya
+dadah,goodbye,goodbye,1.0,ya
+makasih ya,goodbye,goodbye,1.0,ya
+harga iphone terbaru berapa,fallback,fallback,0.0,ya
+cuaca besok di jogja,fallback,fallback,0.0,ya
+resep nasi goreng,fallback,fallback,0.0,ya
+siapa presiden indonesia,fallback,fallback,0.0,ya
