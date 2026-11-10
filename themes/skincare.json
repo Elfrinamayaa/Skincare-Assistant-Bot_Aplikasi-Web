@@ -1,0 +1,593 @@
+{
+  "id": "skincare",
+  "name": "Skincare Assistant",
+  "bot_name": "SkinTant",
+  "avatar": "🧴",
+  "color": "#be185d",
+  "description": "Bot untuk membantu pengguna memahami jenis kulit, memilih produk skincare, mengenali kandungan skincare, dan menyusun rutinitas perawatan kulit berdasarkan kebutuhan kulit.",
+  "greeting": "Hai girl! Selamat datang di SkinTant. Ada yang bisa aku bantu seputar skincare hari ini?",
+"suggestions": [
+  "Bagaimana cara mengetahui jenis kulit?",
+  "Skincare untuk kulit berminyak apa?",
+  "Bagaimana cara mengatasi jerawat?",
+  "Urutan skincare yang benar bagaimana?"
+],
+  "fallback": [
+    "Maaf girl, aku belum memahami pertanyaanmu. Coba tanyakan seputar jenis kulit, jerawat, skincare routine, serum, moisturizer, atau sunscreen, ya!",
+    "Hmm, aku belum menemukan jawaban yang sesuai. Coba gunakan pertanyaan yang lebih spesifik seputar perawatan kulit, ya!",
+    "Maaf girl, pertanyaanmu belum ada dalam pengetahuanku. Kamu bisa bertanya tentang kandungan skincare, jenis kulit, atau masalah wajah lainnya."
+  ],
+  "intents": [
+    {
+      "tag": "sapaan",
+      "patterns": [
+        "hai",
+        "halo",
+        "hello",
+        "hi",
+        "selamat pagi",
+        "selamat siang",
+        "selamat sore",
+        "selamat malam",
+        "hai skintant",
+        "halo skintant",
+        "hai girl",
+        "apa kabar",
+        "pagi",
+        "siang",
+        "sore",
+        "malam"
+      ],
+      "responses": [
+        "Hai girl! Selamat datang di SkinTant. Ada yang bisa aku bantu seputar skincare hari ini?",
+        "Hello girl! Senang bertemu denganmu. Yuk, kita bahas kebutuhan kulitmu hari ini!",
+        "Hai cantik! SkinTant siap membantu menjawab pertanyaanmu seputar perawatan kulit.",
+        "Halo girl! Jangan ragu bertanya tentang skincare. Aku siap membantu!"
+      ]
+    },
+    {
+      "tag": "skin_type",
+      "patterns": [
+        "bagaimana cara mengetahui jenis kulit",
+        "cara mengetahui jenis kulit",
+        "jenis kulit",
+        "tipe kulit",
+        "bagaimana mengetahui tipe kulit wajah",
+        "cara mengecek jenis kulit wajah",
+        "apa saja jenis kulit",
+        "bagaimana cara mengenali kulit wajah",
+        "kulit wajah saya termasuk jenis apa",
+        "cara membedakan jenis kulit",
+        "tes jenis kulit wajah",
+        "bagaimana mengetahui kondisi kulit"
+      ],
+      "responses": [
+        "Kamu bisa mengenali jenis kulit melalui kondisi wajah. Kulit berminyak biasanya menghasilkan banyak minyak, kulit kering terasa tertarik, kulit kombinasi berminyak di area T-zone, dan kulit normal cenderung seimbang.",
+        "Coba bersihkan wajah menggunakan facial wash lembut, kemudian tunggu sekitar 30 menit tanpa menggunakan produk. Jika wajah terasa berminyak di seluruh bagian, kemungkinan kulitmu berminyak. Jika terasa tertarik atau kering, kemungkinan kulitmu kering.",
+        "Secara umum terdapat beberapa jenis kulit, yaitu normal, berminyak, kering, kombinasi, dan sensitif. Setiap jenis kulit membutuhkan perawatan yang berbeda.",
+        "Girl, perhatikan kondisi kulit setelah bangun tidur. Apakah terasa berminyak, kering, atau hanya berminyak di area dahi, hidung, dan dagu? Hal tersebut bisa membantu mengenali jenis kulitmu."
+      ]
+    },
+    {
+      "tag": "oily_skin",
+      "patterns": [
+        "skincare untuk kulit berminyak apa",
+        "skincare kulit berminyak",
+        "kulit berminyak",
+        "wajah berminyak",
+        "bagaimana mengatasi wajah berminyak",
+        "cara mengurangi minyak di wajah",
+        "produk untuk kulit berminyak",
+        "moisturizer untuk kulit berminyak",
+        "facial wash untuk kulit berminyak",
+        "kenapa wajah cepat berminyak",
+        "bagaimana merawat kulit berminyak",
+        "kulit wajah selalu mengkilap"
+      ],
+      "responses": [
+        "Untuk kulit berminyak, pilih facial wash yang lembut, moisturizer bertekstur ringan, dan sunscreen non-comedogenic.",
+        "Kulit berminyak tetap membutuhkan moisturizer, ya girl! Pilih pelembap berbahan ringan seperti gel agar kulit tetap terhidrasi tanpa terasa berat.",
+        "Hindari mencuci wajah terlalu sering karena dapat mengganggu keseimbangan kulit. Cukup bersihkan wajah secara rutin pada pagi dan malam hari.",
+        "Kamu bisa mempertimbangkan kandungan niacinamide untuk membantu mengontrol tampilan minyak dan menjaga kondisi kulit.",
+        "Pilih produk dengan label non-comedogenic agar risiko penyumbatan pori-pori lebih rendah."
+      ]
+    },
+    {
+      "tag": "dry_skin",
+      "patterns": [
+        "bagaimana merawat kulit kering",
+        "cara merawat kulit kering",
+        "kulit kering",
+        "wajah kering",
+        "skincare untuk kulit kering",
+        "moisturizer untuk kulit kering",
+        "kenapa wajah terasa kering",
+        "kulit terasa tertarik",
+        "cara melembapkan wajah",
+        "produk untuk kulit kering",
+        "kulit wajah mengelupas",
+        "bagaimana mengatasi kulit kering"
+      ],
+      "responses": [
+        "Gunakan facial wash lembut, moisturizer yang mengandung ceramide atau hyaluronic acid, dan sunscreen setiap pagi.",
+        "Kulit kering membutuhkan kelembapan tambahan. Pilih moisturizer dengan tekstur krim yang membantu menjaga kelembapan kulit.",
+        "Hindari penggunaan air yang terlalu panas saat mencuci wajah karena dapat membuat kulit semakin kering.",
+        "Kamu bisa menggunakan produk dengan kandungan glycerin, ceramide, atau hyaluronic acid untuk membantu menjaga hidrasi kulit.",
+        "Jangan lupa menggunakan moisturizer secara rutin setelah membersihkan wajah agar kelembapan kulit tetap terjaga."
+      ]
+    },
+    {
+      "tag": "acne_skin",
+      "patterns": [
+        "bagaimana mengatasi jerawat",
+        "cara mengatasi jerawat",
+        "jerawat",
+        "obat jerawat",
+        "skincare untuk kulit berjerawat",
+        "kenapa wajah sering berjerawat",
+        "cara menghilangkan jerawat",
+        "produk untuk wajah berjerawat",
+        "jerawat di pipi",
+        "jerawat di dahi",
+        "jerawat di dagu",
+        "bagaimana mencegah jerawat",
+        "wajah mudah berjerawat"
+      ],
+      "responses": [
+        "Gunakan skincare yang lembut, hindari memencet jerawat, dan pertimbangkan kandungan seperti salicylic acid. Jika jerawat parah atau menetap, konsultasikan dengan dokter kulit.",
+        "Girl, jangan terlalu sering menyentuh atau memencet jerawat. Kebiasaan tersebut bisa memperburuk peradangan dan meningkatkan risiko bekas jerawat.",
+        "Pilih produk non-comedogenic dan gunakan pembersih wajah yang lembut. Hindari mencoba terlalu banyak produk aktif secara bersamaan.",
+        "Salicylic acid dapat membantu membersihkan pori-pori dan menangani komedo. Gunakan sesuai petunjuk produk dan perhatikan reaksi kulit.",
+        "Jika jerawat terasa sakit, meradang parah, atau terus muncul, sebaiknya konsultasikan dengan dokter kulit untuk mendapatkan penanganan yang tepat."
+      ]
+    },
+    {
+      "tag": "skincare_routine",
+      "patterns": [
+        "urutan skincare yang benar bagaimana",
+        "urutan skincare yang benar",
+        "urutan skincare",
+        "skincare routine",
+        "bagaimana urutan memakai skincare",
+        "langkah menggunakan skincare",
+        "urutan skincare pagi dan malam",
+        "skincare dipakai dari mana dulu",
+        "cara memakai skincare yang benar",
+        "tahapan skincare wajah",
+        "urutan penggunaan produk skincare",
+        "skincare routine untuk pemula"
+      ],
+      "responses": [
+        "Urutan skincare pagi: facial wash, moisturizer, dan sunscreen. Malam: makeup remover jika diperlukan, facial wash, dan moisturizer. Produk perawatan tambahan digunakan sesuai petunjuknya.",
+        "Untuk pemula, kamu bisa memulai dengan tiga produk utama, yaitu facial wash, moisturizer, dan sunscreen. Setelah kulit terbiasa, kamu bisa menambahkan produk lain sesuai kebutuhan.",
+        "Urutan skincare umumnya dimulai dari produk dengan tekstur lebih ringan ke lebih kental. Namun, tetap perhatikan petunjuk penggunaan setiap produk.",
+        "Rutinitas pagi berfokus pada perlindungan kulit, sedangkan rutinitas malam berfokus pada membersihkan wajah dan menjaga kelembapan kulit.",
+        "Jangan menggunakan terlalu banyak produk sekaligus, girl. Mulailah dengan rutinitas sederhana dan konsisten."
+      ]
+    },
+    {
+      "tag": "sunscreen",
+      "patterns": [
+        "kenapa harus menggunakan sunscreen",
+        "kenapa harus pakai sunscreen",
+        "sunscreen",
+        "tabir surya",
+        "apa fungsi sunscreen",
+        "manfaat sunscreen untuk wajah",
+        "berapa SPF yang bagus",
+        "sunscreen digunakan kapan",
+        "apakah sunscreen wajib",
+        "berapa kali menggunakan sunscreen",
+        "cara memakai sunscreen",
+        "sunscreen untuk kulit berminyak",
+        "apa akibat tidak menggunakan sunscreen"
+      ],
+      "responses": [
+        "Sunscreen membantu melindungi kulit dari paparan sinar UV. Gunakan minimal SPF 30 dan aplikasikan ulang setiap 2 jam saat beraktivitas di luar ruangan.",
+        "Sunscreen merupakan salah satu langkah penting dalam rutinitas pagi karena membantu melindungi kulit dari efek paparan sinar matahari.",
+        "Gunakan sunscreen sekitar 15 menit sebelum beraktivitas di luar ruangan. Jangan lupa aplikasikan pada leher dan area kulit lain yang terpapar matahari.",
+        "Girl, sunscreen tetap diperlukan meskipun cuaca sedang mendung karena sinar UV tetap dapat mencapai permukaan kulit.",
+        "Pilih sunscreen dengan perlindungan broad-spectrum dan minimal SPF 30 untuk penggunaan sehari-hari."
+      ]
+    },
+    {
+      "tag": "moisturizer",
+      "patterns": [
+        "apa fungsi moisturizer",
+        "fungsi moisturizer",
+        "moisturizer",
+        "pelembap wajah",
+        "kenapa harus memakai moisturizer",
+        "manfaat moisturizer",
+        "moisturizer digunakan kapan",
+        "apakah kulit berminyak perlu moisturizer",
+        "cara memilih moisturizer",
+        "moisturizer untuk pemula",
+        "berapa kali menggunakan moisturizer",
+        "pelembap untuk wajah"
+      ],
+      "responses": [
+        "Moisturizer berfungsi menjaga kelembapan kulit dan membantu mempertahankan skin barrier.",
+        "Semua jenis kulit membutuhkan moisturizer, termasuk kulit berminyak. Pilih tekstur yang sesuai dengan kondisi kulitmu.",
+        "Moisturizer dapat digunakan pada pagi dan malam hari setelah membersihkan wajah.",
+        "Untuk kulit berminyak, pilih moisturizer berbentuk gel. Untuk kulit kering, kamu bisa memilih tekstur krim yang lebih kaya.",
+        "Gunakan moisturizer secara rutin agar kulit tetap terhidrasi dan terasa nyaman."
+      ]
+    },
+    {
+      "tag": "serum",
+      "patterns": [
+        "serum digunakan untuk apa",
+        "fungsi serum",
+        "serum",
+        "apa manfaat serum wajah",
+        "kapan menggunakan serum",
+        "cara memakai serum",
+        "serum untuk pemula",
+        "serum digunakan sebelum moisturizer",
+        "berapa tetes serum yang digunakan",
+        "bagaimana memilih serum",
+        "apakah serum wajib digunakan",
+        "serum untuk perawatan wajah"
+      ],
+      "responses": [
+        "Serum merupakan produk perawatan kulit dengan bahan aktif tertentu untuk membantu mengatasi kebutuhan kulit, seperti kusam, hiperpigmentasi, atau jerawat.",
+        "Serum biasanya digunakan setelah membersihkan wajah dan sebelum moisturizer. Namun, tetap ikuti petunjuk penggunaan produk.",
+        "Tidak semua orang wajib menggunakan serum. Jika kebutuhan kulitmu sudah terpenuhi dengan basic skincare, serum bisa menjadi tambahan sesuai kebutuhan.",
+        "Pilih serum berdasarkan kondisi kulit dan kandungan yang sesuai. Jangan hanya mengikuti tren produk yang sedang populer.",
+        "Jika baru mencoba serum dengan bahan aktif, gunakan secara bertahap dan perhatikan reaksi kulit."
+      ]
+    },
+    {
+      "tag": "acne_scars",
+      "patterns": [
+        "bagaimana menghilangkan bekas jerawat",
+        "cara menghilangkan bekas jerawat",
+        "bekas jerawat",
+        "bekas jerawat hitam",
+        "bekas jerawat merah",
+        "skincare untuk bekas jerawat",
+        "cara memudarkan noda bekas jerawat",
+        "produk untuk bekas jerawat",
+        "kandungan untuk bekas jerawat",
+        "bagaimana mengatasi noda jerawat"
+      ],
+      "responses": [
+        "Bekas jerawat dapat ditangani dengan bahan seperti niacinamide atau azelaic acid, tergantung jenis bekasnya. Sunscreen juga penting untuk membantu mencegah penggelapan bekas jerawat.",
+        "Bekas jerawat hitam membutuhkan perawatan yang konsisten. Kamu bisa mempertimbangkan produk dengan kandungan niacinamide dan selalu menggunakan sunscreen.",
+        "Hindari memencet jerawat karena dapat meningkatkan risiko munculnya bekas dan perubahan tekstur kulit.",
+        "Setiap jenis bekas jerawat membutuhkan pendekatan berbeda. Jika terdapat jaringan parut atau cekungan, konsultasikan dengan dokter kulit."
+      ]
+    },
+    {
+      "tag": "skin_barrier",
+      "patterns": [
+        "apa itu skin barrier",
+        "skin barrier",
+        "fungsi skin barrier",
+        "bagaimana menjaga skin barrier",
+        "skin barrier rusak",
+        "ciri ciri skin barrier rusak",
+        "cara memperbaiki skin barrier",
+        "kenapa skin barrier penting",
+        "tanda skin barrier terganggu",
+        "bagaimana merawat skin barrier"
+      ],
+      "responses": [
+        "Skin barrier adalah lapisan pelindung kulit yang membantu menjaga kelembapan dan melindungi kulit dari faktor eksternal.",
+        "Skin barrier yang terganggu dapat ditandai dengan kulit terasa kering, mudah iritasi, kemerahan, atau terasa perih.",
+        "Untuk menjaga skin barrier, gunakan pembersih lembut, moisturizer, dan sunscreen. Hindari penggunaan bahan aktif secara berlebihan.",
+        "Kandungan seperti ceramide dan glycerin dapat membantu menjaga kelembapan serta mendukung fungsi pelindung kulit.",
+        "Jika kulit sedang mengalami iritasi, sederhanakan rutinitas skincare dan hentikan sementara produk yang diduga memicu reaksi."
+      ]
+    },
+    {
+      "tag": "sensitive_skin",
+      "patterns": [
+        "bagaimana merawat kulit sensitif",
+        "cara merawat kulit sensitif",
+        "kulit sensitif",
+        "skincare untuk kulit sensitif",
+        "ciri ciri kulit sensitif",
+        "wajah mudah iritasi",
+        "kulit sering kemerahan",
+        "produk untuk kulit sensitif",
+        "bagaimana mengatasi kulit sensitif",
+        "kenapa wajah mudah perih",
+        "cara memilih skincare kulit sensitif"
+      ],
+      "responses": [
+        "Gunakan produk lembut, hindari bahan yang memicu iritasi, dan lakukan patch test sebelum mencoba produk baru.",
+        "Kulit sensitif membutuhkan perawatan sederhana. Pilih produk dengan formula lembut dan hindari terlalu banyak bahan aktif dalam satu rutinitas.",
+        "Jika kulit sering mengalami kemerahan atau rasa perih, hentikan sementara produk yang dicurigai menjadi penyebabnya.",
+        "Sebelum menggunakan produk baru, lakukan patch test pada area kecil kulit untuk melihat kemungkinan reaksi.",
+        "Hindari menggosok wajah terlalu keras dan pilih facial wash yang tidak membuat kulit terasa tertarik."
+      ]
+    },
+    {
+      "tag": "double_cleansing",
+      "patterns": [
+        "apa itu double cleansing",
+        "double cleansing",
+        "cara melakukan double cleansing",
+        "manfaat double cleansing",
+        "apakah double cleansing wajib",
+        "double cleansing dilakukan kapan",
+        "produk untuk double cleansing",
+        "apakah double cleansing setiap hari",
+        "cleansing oil dan facial wash",
+        "perbedaan cleansing balm dan facial wash"
+      ],
+      "responses": [
+        "Double cleansing adalah metode membersihkan wajah menggunakan pembersih berbasis minyak atau balm, kemudian dilanjutkan dengan facial wash.",
+        "Double cleansing dapat membantu mengangkat sunscreen, makeup, dan kotoran yang menempel pada wajah.",
+        "Double cleansing biasanya dilakukan pada malam hari, terutama setelah menggunakan makeup atau sunscreen yang sulit dibersihkan.",
+        "Kamu bisa menggunakan cleansing oil atau cleansing balm sebagai langkah pertama, kemudian dilanjutkan dengan facial wash yang lembut.",
+        "Double cleansing tidak harus dilakukan secara berlebihan. Sesuaikan dengan aktivitas dan kondisi kulitmu."
+      ]
+    },
+    {
+      "tag": "skincare_night",
+      "patterns": [
+        "skincare malam apa saja",
+        "skincare malam",
+        "rutinitas malam",
+        "urutan skincare malam",
+        "apa yang digunakan sebelum tidur",
+        "skincare sebelum tidur",
+        "night skincare routine",
+        "cara merawat wajah pada malam hari",
+        "langkah skincare malam",
+        "produk skincare malam"
+      ],
+      "responses": [
+        "Rutinitas malam dapat dimulai dengan membersihkan wajah, menggunakan produk perawatan tambahan jika diperlukan, kemudian moisturizer.",
+        "Sebelum tidur, pastikan wajah sudah dibersihkan dari makeup, sunscreen, dan kotoran yang menempel sepanjang hari.",
+        "Kamu bisa menggunakan serum sesuai kebutuhan kulit setelah membersihkan wajah, kemudian mengunci kelembapan dengan moisturizer.",
+        "Tidak perlu menggunakan banyak produk pada malam hari. Rutinitas sederhana dan konsisten sudah menjadi awal yang baik."
+      ]
+    },
+    {
+      "tag": "acne_prevention",
+      "patterns": [
+        "bagaimana mencegah jerawat",
+        "cara mencegah jerawat",
+        "tips agar tidak berjerawat",
+        "kenapa jerawat sering muncul",
+        "cara menjaga wajah agar tidak berjerawat",
+        "kebiasaan penyebab jerawat",
+        "bagaimana menjaga wajah tetap bersih",
+        "tips wajah bebas jerawat"
+      ],
+      "responses": [
+        "Untuk membantu mencegah jerawat, bersihkan wajah secara rutin, hindari memencet jerawat, dan gunakan produk yang sesuai dengan jenis kulit.",
+        "Biasakan mengganti sarung bantal secara berkala dan bersihkan benda yang sering menyentuh wajah, seperti layar ponsel.",
+        "Hindari penggunaan produk yang membuat kulit terasa terlalu berminyak atau berpotensi menyumbat pori-pori.",
+        "Jaga rutinitas skincare tetap sederhana dan jangan terlalu sering mengganti produk."
+      ]
+    },
+    {
+      "tag": "dull_skin",
+      "patterns": [
+        "kenapa wajah kusam",
+        "cara mengatasi wajah kusam",
+        "skincare untuk kulit kusam",
+        "bagaimana mencerahkan wajah",
+        "kulit terlihat kusam",
+        "cara membuat wajah lebih cerah",
+        "produk untuk wajah kusam",
+        "kandungan untuk kulit kusam",
+        "wajah tidak bercahaya",
+        "tips mengatasi kulit kusam"
+      ],
+      "responses": [
+        "Kulit kusam dapat dipengaruhi oleh penumpukan sel kulit mati, kurangnya kelembapan, dan paparan sinar matahari.",
+        "Gunakan moisturizer dan sunscreen secara rutin. Kamu juga bisa mempertimbangkan kandungan niacinamide atau vitamin C sesuai kondisi kulit.",
+        "Eksfoliasi dapat membantu mengangkat sel kulit mati, tetapi jangan dilakukan terlalu sering karena bisa menyebabkan iritasi.",
+        "Pastikan kulit mendapatkan kelembapan yang cukup dan gunakan produk secara konsisten untuk membantu menjaga kesehatan kulit."
+      ]
+    },
+    {
+      "tag": "niacinamide",
+      "patterns": [
+        "apa itu niacinamide",
+        "fungsi niacinamide",
+        "manfaat niacinamide",
+        "niacinamide untuk apa",
+        "niacinamide cocok untuk kulit apa",
+        "apakah niacinamide bisa mencerahkan",
+        "serum niacinamide",
+        "cara menggunakan niacinamide",
+        "niacinamide untuk jerawat",
+        "niacinamide untuk kulit berminyak"
+      ],
+      "responses": [
+        "Niacinamide merupakan bentuk vitamin B3 yang sering digunakan dalam skincare untuk membantu menjaga skin barrier, merawat tampilan minyak, dan meratakan warna kulit.",
+        "Niacinamide dapat digunakan untuk berbagai jenis kulit, tetapi tetap pilih konsentrasi dan formula yang sesuai dengan toleransi kulitmu.",
+        "Kamu bisa menggunakan serum niacinamide setelah membersihkan wajah dan sebelum moisturizer sesuai petunjuk produk.",
+        "Jika baru pertama kali mencoba niacinamide, gunakan secara bertahap dan perhatikan apakah muncul reaksi iritasi."
+      ]
+    },
+    {
+      "tag": "salicylic_acid",
+      "patterns": [
+        "apa itu salicylic acid",
+        "fungsi salicylic acid",
+        "manfaat salicylic acid",
+        "salicylic acid untuk apa",
+        "salicylic acid untuk jerawat",
+        "salicylic acid untuk komedo",
+        "produk salicylic acid",
+        "cara menggunakan salicylic acid",
+        "apakah salicylic acid cocok untuk kulit berminyak",
+        "kandungan BHA"
+      ],
+      "responses": [
+        "Salicylic acid merupakan bahan aktif kelompok BHA yang dapat membantu membersihkan pori-pori dan mengurangi penumpukan minyak serta sel kulit mati.",
+        "Salicylic acid sering digunakan dalam produk untuk kulit berminyak dan berkomedo.",
+        "Gunakan produk salicylic acid sesuai petunjuk kemasan dan jangan langsung menggabungkannya dengan banyak bahan aktif lainnya.",
+        "Jika kulit terasa kering, perih, atau mengalami iritasi, kurangi frekuensi penggunaan atau hentikan sementara."
+      ]
+    },
+    {
+      "tag": "hyaluronic_acid",
+      "patterns": [
+        "apa itu hyaluronic acid",
+        "fungsi hyaluronic acid",
+        "manfaat hyaluronic acid",
+        "hyaluronic acid untuk apa",
+        "serum hyaluronic acid",
+        "hyaluronic acid untuk kulit kering",
+        "cara menggunakan hyaluronic acid",
+        "kandungan untuk melembapkan wajah"
+      ],
+      "responses": [
+        "Hyaluronic acid merupakan bahan humektan yang membantu menarik dan mempertahankan air sehingga kulit terasa lebih terhidrasi.",
+        "Kandungan hyaluronic acid cocok digunakan dalam rutinitas untuk membantu menjaga kelembapan berbagai jenis kulit.",
+        "Kamu bisa menggunakan serum hyaluronic acid setelah membersihkan wajah, kemudian lanjutkan dengan moisturizer.",
+        "Hyaluronic acid sering ditemukan dalam serum, toner, dan moisturizer."
+      ]
+    },
+    {
+      "tag": "ceramide",
+      "patterns": [
+        "apa itu ceramide",
+        "fungsi ceramide",
+        "manfaat ceramide",
+        "ceramide untuk apa",
+        "ceramide untuk skin barrier",
+        "skincare dengan ceramide",
+        "ceramide untuk kulit kering",
+        "produk yang mengandung ceramide"
+      ],
+      "responses": [
+        "Ceramide merupakan komponen lipid yang secara alami terdapat pada lapisan pelindung kulit dan membantu menjaga kelembapan.",
+        "Ceramide sering digunakan dalam moisturizer untuk mendukung fungsi skin barrier.",
+        "Kandungan ceramide dapat menjadi pilihan untuk kulit yang terasa kering atau membutuhkan perawatan kelembapan.",
+        "Kamu bisa menggunakan moisturizer dengan ceramide secara rutin sesuai kebutuhan kulit."
+      ]
+    },
+    {
+      "tag": "vitamin_c",
+      "patterns": [
+        "apa itu vitamin c untuk wajah",
+        "fungsi vitamin c",
+        "manfaat vitamin c untuk kulit",
+        "serum vitamin c",
+        "vitamin c untuk wajah kusam",
+        "vitamin c untuk flek hitam",
+        "cara menggunakan vitamin c",
+        "kandungan vitamin c dalam skincare",
+        "apakah vitamin c bisa mencerahkan wajah"
+      ],
+      "responses": [
+        "Vitamin C merupakan antioksidan yang sering digunakan dalam skincare untuk membantu merawat tampilan kulit kusam dan warna kulit tidak merata.",
+        "Serum vitamin C umumnya digunakan pada pagi hari sebelum moisturizer dan sunscreen, sesuai petunjuk produk.",
+        "Jika baru mencoba vitamin C, lakukan patch test terlebih dahulu dan perhatikan reaksi kulit.",
+        "Simpan produk vitamin C sesuai petunjuk kemasan agar kualitas formulanya tetap terjaga."
+      ]
+    },
+    {
+      "tag": "retinol",
+      "patterns": [
+        "apa itu retinol",
+        "fungsi retinol",
+        "manfaat retinol",
+        "retinol untuk apa",
+        "serum retinol",
+        "cara menggunakan retinol",
+        "retinol untuk pemula",
+        "retinol untuk jerawat",
+        "retinol untuk garis halus",
+        "kapan menggunakan retinol"
+      ],
+      "responses": [
+        "Retinol merupakan turunan vitamin A yang digunakan dalam perawatan kulit untuk membantu memperbaiki tampilan tekstur kulit dan garis halus.",
+        "Retinol sebaiknya diperkenalkan secara bertahap karena dapat menyebabkan kulit kering, kemerahan, atau iritasi.",
+        "Gunakan retinol pada malam hari sesuai petunjuk produk dan jangan lupa menggunakan sunscreen pada pagi hari.",
+        "Hindari penggunaan retinol saat hamil. Jika sedang hamil atau menyusui, konsultasikan penggunaan bahan aktif dengan tenaga kesehatan.",
+        "Jangan langsung menggabungkan retinol dengan banyak bahan aktif yang berpotensi mengiritasi kulit."
+      ]
+    },
+    {
+      "tag": "skincare_beginner",
+      "patterns": [
+        "skincare untuk pemula",
+        "aku baru mulai skincare",
+        "bagaimana memulai skincare",
+        "produk skincare pertama",
+        "skincare basic untuk pemula",
+        "apa saja skincare dasar",
+        "skincare sederhana untuk pemula",
+        "produk wajib skincare"
+      ],
+      "responses": [
+        "Welcome to skincare journey, girl! Untuk pemula, kamu cukup memulai dengan tiga produk dasar: facial wash, moisturizer, dan sunscreen.",
+        "Jangan langsung membeli banyak produk. Kenali jenis kulit dan kebutuhanmu terlebih dahulu sebelum memilih skincare.",
+        "Gunakan produk secara konsisten dan perkenalkan produk baru satu per satu agar kamu bisa mengamati reaksi kulit.",
+        "Setelah basic skincare sudah sesuai, kamu bisa mempertimbangkan serum atau produk tambahan sesuai masalah kulit."
+      ]
+    },
+    {
+      "tag": "skincare_order",
+      "patterns": [
+        "serum dulu atau moisturizer dulu",
+        "sunscreen dulu atau moisturizer",
+        "urutan serum dan moisturizer",
+        "toner dulu atau serum",
+        "facial wash dulu atau toner",
+        "urutan memakai toner serum moisturizer",
+        "produk mana yang dipakai terlebih dahulu",
+        "moisturizer sebelum sunscreen atau sesudah"
+      ],
+      "responses": [
+        "Secara umum, urutan skincare adalah facial wash, toner jika digunakan, serum, moisturizer, lalu sunscreen pada pagi hari.",
+        "Moisturizer digunakan setelah serum agar membantu menjaga kelembapan kulit. Pada pagi hari, sunscreen menjadi langkah terakhir.",
+        "Toner bukan produk wajib. Jika kamu tidak menggunakannya, kamu bisa langsung menggunakan serum setelah membersihkan wajah.",
+        "Selalu ikuti petunjuk penggunaan produk karena beberapa bahan aktif memiliki aturan pemakaian khusus."
+      ]
+    },
+    {
+      "tag": "product_selection",
+      "patterns": [
+        "bagaimana memilih skincare",
+        "cara memilih produk skincare",
+        "skincare yang cocok untuk wajah",
+        "bagaimana menentukan produk skincare",
+        "tips memilih skincare",
+        "produk skincare sesuai jenis kulit",
+        "cara mengetahui produk cocok untuk kulit",
+        "skincare apa yang harus dibeli"
+      ],
+      "responses": [
+        "Sebelum memilih skincare, kenali jenis kulit, masalah kulit, dan kebutuhan perawatanmu terlebih dahulu.",
+        "Perhatikan daftar ingredients, petunjuk pemakaian, serta kecocokan formula dengan kondisi kulit.",
+        "Jangan hanya memilih produk karena sedang viral. Produk yang cocok untuk orang lain belum tentu cocok untuk kulitmu.",
+        "Mulailah dengan produk dasar dan tambahkan produk perawatan secara bertahap sesuai kebutuhan."
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "bye",
+        "dadah",
+        "terima kasih",
+        "makasih",
+        "thanks",
+        "sampai jumpa",
+        "goodbye",
+        "see you",
+        "oke terima kasih",
+        "makasih skintant",
+        "sudah cukup",
+        "itu saja"
+      ],
+      "responses": [
+        "Terima kasih sudah menggunakan SkinTant! Jangan lupa rawat kulitmu dan tetap percaya diri. See you, girl!",
+        "Sama-sama girl! Semoga informasi dari SkinTant bermanfaat untuk perjalanan skincare kamu. Stay glowing!",
+        "Bye girl! Jangan lupa konsisten merawat kulit dan selalu gunakan sunscreen. Sampai jumpa lagi!",
+        "Senang bisa membantu kamu hari ini. Tetap sayangi kulitmu, ya!"
+      ]
+    }
+  ]
+}
