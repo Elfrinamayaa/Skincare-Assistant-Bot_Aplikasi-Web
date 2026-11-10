@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="{{ theme.color if theme is defined and theme else '#b94f78' }}">
+  <meta name="description" content="SkinTant adalah chatbot asisten skincare yang membantu memahami kebutuhan dan rutinitas perawatan kulit.">
+  <title>{% block title %}SkinTant | Skincare Assistant{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  {% block head %}{% endblock %}
+</head>
+<body {% if theme is defined and theme %}style="--accent: {{ theme.color }}"{% endif %}>
+  <header class="topbar">
+    <a class="brand" href="{{ url_for('index') }}" aria-label="SkinTant - Halaman utama">
+      <span aria-hidden="true">✿</span>
+      <span>SkinTant</span>
+    </a>
+    <nav aria-label="Navigasi utama">
+      {% block nav %}{% endblock %}
+    </nav>
+  </header>
+  <main id="main-content">
+    {% block content %}{% endblock %}
+  </main>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

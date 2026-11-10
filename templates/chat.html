@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}{{ theme.bot_name }} - {{ theme.name }}{% endblock %}
+{% block nav %}
+<a class="link" href="{{ url_for('admin_page', theme_id=theme.id) }}">Statistik →</a>
+{% endblock %}
+{% block content %}
+<section class="chat" aria-label="Percakapan dengan {{ theme.bot_name }}">
+  <header class="chat-head">
+    <div class="avatar" aria-hidden="true">{{ theme.avatar }}</div>
+    <div class="chat-identity">
+      <h1>{{ theme.bot_name }}</h1>
+      <p>{{ theme.name }} · Skincare Assistant</p>
+    </div>
+    <div class="head-tools">
+      <label class="toggle">
+        <input type="checkbox" id="learn">
+        <span>Lihat cara bot berpikir</span>
+      </label>
+      <button type="button" id="clear" class="ghost">Hapus riwayat</button>
+    </div>
+  </header>
+
+  <div id="messages" class="messages" aria-live="polite" aria-relevant="additions"></div>
+
+  <div id="chips" class="chips" aria-label="Saran pertanyaan"></div>
+
+  <form id="form" class="composer" autocomplete="off">
+    <input
+      id="input"
+      type="text"
+      maxlength="500"
+      placeholder="Tulis pertanyaan seputar skincare..."
+      aria-label="Tulis pertanyaan"
+      required
+    >
+    <button class="btn" type="submit">
+      Kirim <span aria-hidden="true">↑</span>
+    </button>
+  </form>
+</section>
+<script id="theme-data" type="application/json">{{ theme|tojson }}</script>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='chat.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}SkinTant | Pilih Asisten{% endblock %}
+{% block content %}
+<section class="intro">
+  <span class="eyebrow">YOUR PERSONAL CHAT ASSISTANT</span>
+  <h1>Temukan asisten yang tepat untukmu.</h1>
+  <p>Mulai percakapan dengan asisten pilihanmu. Setiap chatbot memiliki pengetahuan dan fokus pembahasan yang berbeda.</p>
+</section>
+
+<section class="theme-list" aria-label="Daftar chatbot tersedia">
+  {% for t in themes %}
+  <article class="theme-card" style="--accent: {{ t.color }}">
+    <div class="avatar" aria-hidden="true">{{ t.avatar }}</div>
+    <div class="theme-content">
+      <span class="theme-label">PERSONAL ASSISTANT</span>
+      <h2>{{ t.name }}</h2>
+      <p>{{ t.description }}</p>
+      <div class="actions">
+        <a class="btn" href="{{ url_for('chat_page', theme_id=t.id) }}">
+          Mulai percakapan <span aria-hidden="true">→</span>
+        </a>
+        <a class="link" href="{{ url_for('admin_page', theme_id=t.id) }}">Lihat statistik</a>
+      </div>
+    </div>
+  </article>
+  {% else %}
+  <div class="empty-state">
+    <span class="empty-icon" aria-hidden="true">✿</span>
+    <h2>Belum ada asisten tersedia</h2>
+    <p class="empty">Tambahkan file konfigurasi .json ke folder themes/ untuk menampilkan chatbot.</p>
+  </div>
+  {% endfor %}
+</section>
+
+<footer class="page-footer">
+  <p>SkinTant · A simpler way to find your answers.</p>
+</footer>
+{% endblock %}

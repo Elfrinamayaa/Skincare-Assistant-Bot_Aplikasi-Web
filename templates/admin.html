@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block title %}Statistik - {{ theme.name }}{% endblock %}
+{% block nav %}
+<a class="link" href="{{ url_for('chat_page', theme_id=theme.id) }}">← Kembali ke chat</a>
+{% endblock %}
+{% block content %}
+<section class="admin">
+  <header class="intro">
+    <h1>Statistik {{ theme.bot_name }}</h1>
+    <p class="muted">Pantau aktivitas percakapan, performa chatbot, dan pertanyaan yang belum dikenali.</p>
+  </header>
+
+  <section aria-label="Ringkasan statistik chatbot">
+    <h2>Ringkasan Aktivitas</h2>
+    <p class="muted">Threshold kecocokan saat ini: <strong>{{ threshold }}</strong>. Pertanyaan dengan skor di bawah angka ini akan dijawab menggunakan fallback.</p>
+    <div class="stats">
+      <div>
+        <strong>{{ stats.total_questions }}</strong>
+        <span>Total pertanyaan masuk</span>
+      </div>
+      <div>
+        <strong>{{ stats.answered }}</strong>
+        <span>Pertanyaan terjawab</span>
+      </div>
+      <div>
+        <strong>{{ stats.fallback_rate }}%</strong>
+        <span>Tingkat fallback</span>
+      </div>
+      <div>
+        <strong>{{ stats.avg_score }}</strong>
+        <span>Rata-rata skor kecocokan</span>
+      </div>
+      <div>
+        <strong>{{ stats.sessions }}</strong>
+        <span>Total sesi pengunjung</span>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="intent-heading">
+    <h2 id="intent-heading">Aktivitas Berdasarkan Intent</h2>
+    <p class="muted">Menampilkan jumlah pertanyaan dan rata-rata skor kecocokan pada setiap kategori intent.</p>
+    {% if summary %}
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Intent</th>
+            <th scope="col">Jumlah Pertanyaan</th>
+            <th scope="col">Rata-rata Skor</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in summary %}
+          <tr>
+            <td>{{ row.intent }}</td>
+            <td>{{ row.count }}</td>
+            <td>{{ row.avg_score }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <p class="empty">Belum ada data percakapan. Silakan mulai berinteraksi melalui halaman chat untuk melihat statistik.</p>
+    {% endif %}
+  </section>
+
+  <section aria-labelledby="unknown-heading">
+    <h2 id="unknown-heading">Pertanyaan Belum Dikenali</h2>
+    <p class="muted">Daftar pertanyaan yang belum berhasil dicocokkan dengan intent yang tersedia.</p>
+    {% if unknown %}
+    <p class="muted">Gunakan daftar ini sebagai bahan pengembangan chatbot. Tambahkan kata kunci yang relevan ke bagian <code>patterns</code> pada file <code>themes/{{ theme.id }}.json</code>.</p>
+    <ul class="unknown">
+      {% for q in unknown %}
+      <li>
+        <span>{{ q.text }}</span>
+        <small>Skor {{ q.score }} &middot; {{ q.created_at }}</small>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p class="empty">Belum ada pertanyaan yang tidak dikenali. Chatbot berhasil mencocokkan seluruh pertanyaan yang tercatat.</p>
+    {% endif %}
+  </section>
+</section>
+{% endblock %}
